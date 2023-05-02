@@ -6,15 +6,15 @@ for image_path in glob.glob("C:/Users/xperi/Desktop/Python/Images/*.png"):
     name = image_path.split("\\")[1]
 
     rgba = img.convert("RGBA")
-    datas = rgba.getdata()
+    pixels = rgba.getdata()
 
-    newData = []
+    newPixels = []
 
-    for item in datas:
-        if item[0] == 0 and item[1] == 255 and item[2] == 255:
-            newData.append((255, 255, 255, 0))
+    for pixel in pixels:
+        if pixel[0] == 0 and pixel[1] == 255 and pixel[2] == 255:
+            newPixels.append((255, 255, 255, 0))
         else:
-            newData.append(item)
+            newPixels.append(pixel)
 
-    rgba.putdata(newData)
+    rgba.putdata(newPixels)
     rgba.save("result/" + name, "PNG")
