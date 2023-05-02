@@ -1,7 +1,7 @@
 from PIL import Image
 import glob
 
-for image_path in glob.glob("C:/Users/xperi/Desktop/Python/Images/*.png"):
+for image_path in glob.glob("Images/*.png"):
     img = Image.open(image_path)
     name = image_path.split("\\")[1]
 
